@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact TATA Motors</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        .nav { background: #0056b3; padding: 10px; }
+        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+        .nav a:hover { text-decoration: underline; }
+        .content { background: white; padding: 20px; margin: 20px 0; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .contact-card { border: 1px solid #ddd; padding: 20px; }
+        .contact-form { background: #f8f9fa; padding: 20px; margin: 20px 0; }
+        .form-group { margin: 15px 0; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ddd; }
+        .submit-btn { background: #2c3e50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        .dealer-locator { background: #e8f4fd; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg width="60" height="40" viewBox="0 0 100 60" style="margin-bottom: 10px;">
+            <rect x="10" y="15" width="80" height="8" fill="white"/>
+            <text x="50" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">TATA</text>
+        </svg>
+        <h1>Contact TATA Motors</h1>
+        <p>Get in Touch with Us</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="passenger-cars.html">Passenger Cars</a>
+        <a href="commercial-vehicles.html">Commercial Vehicles</a>
+        <a href="electric-vehicles.html">Electric Vehicles</a>
+        <a href="sales-offers.html">Sales & Offers</a>
+        <a href="brochures.html">Brochures</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="content">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Customer Care</h3>
+                <p><strong>Toll-Free:</strong> 1800-209-7979</p>
+                <p><strong>Email:</strong> customercare@tatamotors.com</p>
+                <p><strong>Hours:</strong> 9:00 AM - 6:00 PM (Mon-Sat)</p>
+                <p>For general inquiries, service support, and customer assistance</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Sales Enquiry</h3>
+                <p><strong>Phone:</strong> 1800-209-8282</p>
+                <p><strong>WhatsApp:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> sales@tatamotors.com</p>
+                <p>For new vehicle purchases, test drives, and pricing information</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Service Support</h3>
+                <p><strong>Phone:</strong> 1800-209-6161</p>
+                <p><strong>Email:</strong> service@tatamotors.com</p>
+                <p><strong>Hours:</strong> 24/7 Roadside Assistance</p>
+                <p>For vehicle service, maintenance, and emergency support</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Parts & Accessories</h3>
+                <p><strong>Phone:</strong> 1800-209-5555</p>
+                <p><strong>Email:</strong> parts@tatamotors.com</p>
+                <p><strong>Hours:</strong> 9:00 AM - 6:00 PM (Mon-Sat)</p>
+                <p>For genuine parts, accessories, and spare parts inquiry</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Corporate Office</h3>
+                <p><strong>Address:</strong> Bombay House, 24 Homi Mody Street, Mumbai - 400001</p>
+                <p><strong>Phone:</strong> +91-22-6665-8282</p>
+                <p><strong>Email:</strong> corporate@tatamotors.com</p>
+                <p>Head office for corporate communications and partnerships</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Electric Vehicle Support</h3>
+                <p><strong>Phone:</strong> 1800-209-3030</p>
+                <p><strong>Email:</strong> ev@tatamotors.com</p>
+                <p><strong>Hours:</strong> 9:00 AM - 7:00 PM (Mon-Sun)</p>
+                <p>Dedicated support for electric vehicle customers</p>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h3>Send us a Message</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type *</label>
+                    <select id="inquiry-type" name="inquiry-type" required>
+                        <option value="">Select Inquiry Type</option>
+                        <option value="sales">Sales Inquiry</option>
+                        <option value="service">Service Support</option>
+                        <option value="parts">Parts & Accessories</option>
+                        <option value="test-drive">Test Drive Request</option>
+                        <option value="feedback">Feedback/Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vehicle">Vehicle of Interest</label>
+                    <select id="vehicle" name="vehicle">
+                        <option value="">Select Vehicle</option>
+                        <option value="nexon">TATA Nexon</option>
+                        <option value="harrier">TATA Harrier</option>
+                        <option value="safari">TATA Safari</option>
+                        <option value="punch">TATA Punch</option>
+                        <option value="altroz">TATA Altroz</option>
+                        <option value="tiago">TATA Tiago</option>
+                        <option value="nexon-ev">TATA Nexon EV</option>
+                        <option value="tigor-ev">TATA Tigor EV</option>
+                        <option value="punch-ev">TATA Punch EV</option>
+                        <option value="commercial">Commercial Vehicle</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Please describe your inquiry in detail..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="dealer-locator">
+            <h3>Find Your Nearest Dealer</h3>
+            <p>Locate TATA Motors dealerships, service centers, and authorized outlets near you.</p>
+            <p><strong>Dealer Locator:</strong> Visit www.tatamotors.com/dealer-locator</p>
+            <p><strong>Service Centers:</strong> Over 3,500+ touchpoints across India</p>
+            
+            <h4>Major City Dealerships:</h4>
+            <ul>
+                <li><strong>Mumbai:</strong> 25+ dealerships | <strong>Delhi:</strong> 30+ dealerships</li>
+                <li><strong>Bangalore:</strong> 20+ dealerships | <strong>Chennai:</strong> 18+ dealerships</li>
+                <li><strong>Hyderabad:</strong> 15+ dealerships | <strong>Pune:</strong> 12+ dealerships</li>
+                <li><strong>Kolkata:</strong> 14+ dealerships | <strong>Ahmedabad:</strong> 10+ dealerships</li>
+            </ul>
+        </div>
+        
+        <div style="background: #d4edda; padding: 20px; margin: 20px 0; border-left: 4px solid #28a745;">
+            <h3>Follow Us on Social Media</h3>
+            <p><strong>Facebook:</strong> @TataMotorsOfficial</p>
+            <p><strong>Twitter:</strong> @TataMotors</p>
+            <p><strong>Instagram:</strong> @tatamotorsofficial</p>
+            <p><strong>YouTube:</strong> TATA Motors</p>
+            <p><strong>LinkedIn:</strong> Tata Motors Limited</p>
+        </div>
+    </div>
+</body>
+</html>

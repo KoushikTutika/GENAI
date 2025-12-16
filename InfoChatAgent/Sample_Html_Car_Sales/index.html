@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA Motors - Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .header { background: #003d82; color: white; padding: 20px; text-align: center; }
+        .nav { background: #0056b3; padding: 10px; }
+        .nav a { color: white; text-decoration: none; margin: 0 15px; }
+        .nav a:hover { text-decoration: underline; }
+        .content { background: white; padding: 20px; margin: 20px 0; }
+        .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .car-card { border: 1px solid #ddd; padding: 15px; text-align: center; }
+        .car-card img { width: 100%; height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <svg width="60" height="40" viewBox="0 0 100 60" style="margin-bottom: 10px;">
+            <rect x="10" y="15" width="80" height="8" fill="white"/>
+            <text x="50" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">TATA</text>
+        </svg>
+        <h1>TATA Motors</h1>
+        <p>Driving Innovation Since 1945</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="passenger-cars.html">Passenger Cars</a>
+        <a href="commercial-vehicles.html">Commercial Vehicles</a>
+        <a href="electric-vehicles.html">Electric Vehicles</a>
+        <a href="sales-offers.html">Sales & Offers</a>
+        <a href="brochures.html">Brochures</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="content">
+        <h2>Welcome to TATA Motors</h2>
+        <p>India's largest automobile manufacturer with a legacy of innovation and excellence.</p>
+        
+        <div class="car-grid">
+            <div class="car-card">
+                <h3>Passenger Cars</h3>
+                <p>Explore our range of hatchbacks, sedans, and SUVs</p>
+                <a href="passenger-cars.html">View Details</a>
+            </div>
+            <div class="car-card">
+                <h3>Commercial Vehicles</h3>
+                <p>Trucks, buses, and commercial solutions</p>
+                <a href="commercial-vehicles.html">View Details</a>
+            </div>
+            <div class="car-card">
+                <h3>Electric Vehicles</h3>
+                <p>Future-ready electric mobility solutions</p>
+                <a href="electric-vehicles.html">View Details</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
