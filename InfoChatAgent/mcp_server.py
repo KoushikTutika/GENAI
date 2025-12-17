@@ -1,11 +1,11 @@
 import json
 from typing import Dict, Any, List
 import asyncio
-from web_crawler import WebCrawler
+from simple_crawler import SimpleCrawler
 
 class MCPServer:
     def __init__(self):
-        self.crawler = WebCrawler()
+        self.crawler = SimpleCrawler()
         self.tools = {
             "search_documents": self.search_documents,
             "get_vehicle_info": self.get_vehicle_info,
@@ -95,7 +95,7 @@ class MCPServer:
         
         response = f"Found {len(results)} relevant documents:\n\n"
         for i, result in enumerate(results[:3], 1):
-            response += f"{i}. {result['metadata']['title']}\n"
+            response += f"{i}. {result['title']}\n"
             response += f"   {result['content'][:200]}...\n\n"
         
         return response

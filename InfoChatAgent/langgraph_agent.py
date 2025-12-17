@@ -1,9 +1,7 @@
 from langgraph.graph import StateGraph, END
-from langgraph.prebuilt import ToolExecutor, ToolInvocation
-from langchain.schema import BaseMessage, HumanMessage, AIMessage
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from typing import TypedDict, Annotated, Sequence, Dict, Any
 import operator
-import ollama
 from mcp_server import MCPServer
 
 class AgentState(TypedDict):
@@ -13,8 +11,6 @@ class AgentState(TypedDict):
 class TATAMotorsAgent:
     def __init__(self):
         self.mcp_server = MCPServer()
-        self.ollama_client = ollama.Client()
-        self.model_name = "llama3.2"  # or your preferred Ollama model
         
         # Initialize and crawl documents
         self._initialize_knowledge_base()
@@ -48,7 +44,7 @@ class TATAMotorsAgent:
             }
         )
         
-        workflow.add_edge("tools", "agent")
+        workflow.add_edge("tools", END)
         
         return workflow.compile()
     
@@ -77,17 +73,11 @@ class TATAMotorsAgent:
                 "messages": [AIMessage(content="", additional_kwargs={"tool_calls": [tool_call]})]
             }
         else:
-            # Generate direct response using Ollama
-            response = self.ollama_client.chat(
-                model=self.model_name,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": last_message}
-                ]
-            )
+            # Generate simple response without Ollama
+            response = f"I can help you with information about TATA Motors vehicles. Your query: '{last_message}'. Please ask about specific vehicles, pricing, offers, or contact information."
             
             return {
-                "messages": [AIMessage(content=response['message']['content'])]
+                "messages": [AIMessage(content=response)]
             }
     
     async def tools_node(self, state: AgentState) -> Dict[str, Any]:
@@ -112,20 +102,14 @@ class TATAMotorsAgent:
             tool_result = result.get("content", [{}])[0].get("text", "No result")
             results.append(tool_result)
         
-        # Generate final response using Ollama with tool results
+        # Generate final response with tool results
         context = "\n".join(results)
         user_query = state["messages"][-2].content if len(state["messages"]) > 1 else ""
         
-        response = self.ollama_client.chat(
-            model=self.model_name,
-            messages=[
-                {"role": "system", "content": f"Based on this information: {context}"},
-                {"role": "user", "content": f"Answer this question: {user_query}"}
-            ]
-        )
+        response_text = f"Based on TATA Motors information:\n\n{context}"
         
         return {
-            "messages": [AIMessage(content=response['message']['content'])]
+            "messages": [AIMessage(content=response_text)]
         }
     
     def should_continue(self, state: AgentState) -> str:
@@ -193,5 +177,5 @@ class TATAMotorsAgent:
             "context": {}
         }
         
-        result = await self.graph.ainvoke(initial_state)
+        result = await self.graph.ainvoke(initial_state, {"recursion_limit": 100})
         return result["messages"][-1].content
