@@ -1,9 +1,8 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-ollama
-beautifulsoup4==4.12.2
-requests==2.31.0
-pydantic
-python-multipart==0.0.6
-jinja2==3.1.2
-aiofiles==23.2.1
+beautifulsoup4
+sentence-transformers
+faiss-cpu
+numpy
+lxml
+flask
+requests
+streamlit

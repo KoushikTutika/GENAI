@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA Commercial Vehicles - Troubleshooting Handbook</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .header { background: #003d82; color: white; padding: 20px; text-align: center; }
+        .content { background: white; padding: 30px; margin: 20px auto; max-width: 900px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .error-section { border-left: 4px solid #e74c3c; padding: 20px; margin: 20px 0; background: #fff5f5; }
+        .error-code { font-family: monospace; background: #2c3e50; color: #ecf0f1; padding: 5px 10px; border-radius: 4px; font-size: 16px; }
+        .steps { background: white; padding: 15px; margin: 10px 0; }
+        .steps li { margin: 10px 0; line-height: 1.6; }
+        .back-btn { display: inline-block; background: #0056b3; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-bottom: 20px; }
+        .back-btn:hover { background: #003d82; }
+        h1 { margin: 0; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚛 TATA Commercial Vehicles Troubleshooting Handbook</h1>
+        <p>Heavy-Duty Vehicle Error Code Reference & Resolution Guide</p>
+    </div>
+    
+    <div class="content">
+        <a href="commercial-vehicles.html" class="back-btn">← Back to Commercial Vehicles</a>
+        
+        <h2>Applicable Models</h2>
+        <p>This handbook covers: Ace Gold, Super Ace, Intra, LPT Series, Prima, Signa, Starbus, Ultra Bus, Magna</p>
+        
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Commercial vehicles require specialized tools and training. Always consult certified TATA commercial vehicle technicians for repairs.
+        </div>
+        
+        <h2>Common Error Codes & Solutions</h2>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">P2463</span></h3>
+            <h4>DPF (Diesel Particulate Filter) Soot Accumulation</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>DPF warning light illuminated</li>
+                <li>Reduced engine power</li>
+                <li>Increased fuel consumption</li>
+                <li>Black smoke from exhaust</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Check DPF Status:</strong> Use diagnostic tool to check DPF soot load percentage (regeneration needed above 70%)</li>
+                <li><strong>Initiate Parked Regeneration:</strong> If vehicle is stationary, use diagnostic tool to start forced regeneration (engine must be at operating temperature)</li>
+                <li><strong>Perform Active Regeneration:</strong> Drive vehicle at 60+ km/h for 30-45 minutes on highway to allow automatic regeneration</li>
+                <li><strong>Check DPF Pressure Sensor:</strong> Test differential pressure sensor (located on DPF). Clean or replace if faulty</li>
+                <li><strong>Inspect Exhaust Temperature Sensors:</strong> Verify both upstream and downstream temperature sensors are functioning (should read 200-600°C during regeneration)</li>
+                <li><strong>Check Engine Oil Level:</strong> Ensure oil level is correct (high oil level can indicate fuel dilution from failed regenerations)</li>
+                <li><strong>DPF Cleaning:</strong> If regeneration fails, remove DPF and perform professional cleaning (every 150,000-200,000 km)</li>
+                <li><strong>DPF Replacement:</strong> If severely clogged or damaged, replace DPF assembly (typically after 400,000-500,000 km)</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹5,000 (regeneration) - ₹85,000 (replacement)</p>
+            <p><strong>Time Required:</strong> 1-6 hours</p>
+        </div>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">P0087</span></h3>
+            <h4>Fuel Rail Pressure Too Low</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Hard starting or no start condition</li>
+                <li>Loss of power under load</li>
+                <li>Engine misfiring or rough running</li>
+                <li>White smoke from exhaust</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Check Fuel Level:</strong> Ensure adequate fuel in tank (low fuel can cause air in system)</li>
+                <li><strong>Inspect Fuel Quality:</strong> Drain fuel sample and check for water contamination or debris</li>
+                <li><strong>Test Fuel Pressure:</strong> Connect pressure gauge to fuel rail (should be 1400-1600 bar for common rail diesel)</li>
+                <li><strong>Check Fuel Filter:</strong> Replace fuel filter if clogged or if service interval exceeded (every 40,000 km)</li>
+                <li><strong>Inspect Fuel Lines:</strong> Check for leaks, cracks, or restrictions in fuel supply and return lines</li>
+                <li><strong>Test Fuel Pump:</strong> Check low-pressure fuel pump operation (should deliver 3-5 bar). Replace if faulty</li>
+                <li><strong>Check High-Pressure Pump:</strong> Test common rail high-pressure pump. Listen for unusual noises indicating wear</li>
+                <li><strong>Inspect Fuel Pressure Regulator:</strong> Test pressure control valve on fuel rail. Replace if stuck open</li>
+                <li><strong>Bleed Fuel System:</strong> If air entered system, perform complete fuel system bleeding procedure</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹2,000 - ₹65,000 (depending on component)</p>
+            <p><strong>Time Required:</strong> 2-5 hours</p>
+        </div>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">P0605</span></h3>
+            <h4>ECM Internal Control Module ROM Error</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Engine won't start or starts then stalls</li>
+                <li>Multiple warning lights on dashboard</li>
+                <li>Erratic engine behavior</li>
+                <li>Loss of communication with ECM</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Check Battery Voltage:</strong> Verify battery voltage is stable (24V system: 24-26V, 12V system: 12-14V). Low voltage can cause ECM errors</li>
+                <li><strong>Inspect ECM Power Supply:</strong> Check all power and ground connections to ECM. Clean terminals and ensure tight connections</li>
+                <li><strong>Check ECM Fuses:</strong> Verify all ECM-related fuses are intact (typically 10A-30A depending on system)</li>
+                <li><strong>Disconnect Battery:</strong> Disconnect both battery terminals for 15 minutes to reset ECM memory</li>
+                <li><strong>Reconnect and Test:</strong> Reconnect battery and attempt to start engine. Check if error clears</li>
+                <li><strong>ECM Reprogramming:</strong> Visit authorized service center to reprogram ECM with latest software version</li>
+                <li><strong>Check for Water Damage:</strong> Inspect ECM housing for water ingress or corrosion (common in heavy rain/flood conditions)</li>
+                <li><strong>ECM Replacement:</strong> If error persists after reprogramming, ECM may need replacement (must be programmed to vehicle VIN)</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹5,000 (reprogramming) - ₹45,000 (replacement)</p>
+            <p><strong>Time Required:</strong> 1-4 hours</p>
+        </div>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">P0380</span></h3>
+            <h4>Glow Plug Circuit Malfunction (Diesel Engines)</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Hard starting in cold weather</li>
+                <li>Glow plug indicator stays on longer than normal</li>
+                <li>White smoke during cold start</li>
+                <li>Rough idle until engine warms up</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Test Glow Plug Relay:</strong> Check relay operation with multimeter. Should click when activated and show continuity</li>
+                <li><strong>Check Individual Glow Plugs:</strong> Remove each glow plug and test resistance (should be 0.5-2.0 ohms). Replace any with infinite resistance</li>
+                <li><strong>Inspect Wiring Harness:</strong> Check glow plug wiring for damage, corrosion, or loose connections</li>
+                <li><strong>Test Glow Plug Timer:</strong> Verify glow plug control module is providing correct heating duration</li>
+                <li><strong>Check Battery Voltage:</strong> Glow plugs require full voltage to heat properly (11V minimum for 12V system, 22V for 24V system)</li>
+                <li><strong>Replace Faulty Glow Plugs:</strong> Install new glow plugs (replace all if vehicle has high mileage for consistent performance)</li>
+                <li><strong>Clear Codes:</strong> Use diagnostic tool to clear fault codes</li>
+                <li><strong>Test Cold Start:</strong> Allow engine to cool completely, then test starting procedure</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹3,000 - ₹12,000 (for 4-6 cylinder engine)</p>
+            <p><strong>Time Required:</strong> 2-3 hours</p>
+        </div>
+        
+        <h2>Preventive Maintenance Schedule</h2>
+        <ul class="steps">
+            <li><strong>Every 20,000 km:</strong> Engine oil and filter change, fuel filter replacement</li>
+            <li><strong>Every 40,000 km:</strong> Air filter replacement, coolant check</li>
+            <li><strong>Every 80,000 km:</strong> Transmission oil change, differential oil change</li>
+            <li><strong>Every 100,000 km:</strong> Timing belt inspection/replacement (if applicable)</li>
+            <li><strong>Every 150,000 km:</strong> DPF cleaning, turbocharger inspection</li>
+            <li><strong>Annual:</strong> Complete vehicle inspection, brake system check, suspension check</li>
+        </ul>
+        
+        <h2>Emergency Contact</h2>
+        <p><strong>TATA Commercial Vehicle 24x7 Support:</strong> 1800-209-8787</p>
+        <p><strong>Fleet Support:</strong> 1800-266-7782</p>
+        <p><strong>Parts Helpline:</strong> 1800-209-7979</p>
+        
+        <a href="commercial-vehicles.html" class="back-btn">← Back to Commercial Vehicles</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA Nexon EV - Troubleshooting Handbook</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .header { background: #27ae60; color: white; padding: 20px; text-align: center; }
+        .content { background: white; padding: 30px; margin: 20px auto; max-width: 900px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .error-section { border-left: 4px solid #e74c3c; padding: 20px; margin: 20px 0; background: #fff5f5; }
+        .error-code { font-family: monospace; background: #27ae60; color: white; padding: 5px 10px; border-radius: 4px; font-size: 16px; }
+        .steps { background: white; padding: 15px; margin: 10px 0; }
+        .steps li { margin: 10px 0; line-height: 1.6; }
+        .back-btn { display: inline-block; background: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-bottom: 20px; }
+        .back-btn:hover { background: #229954; }
+        h1 { margin: 0; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+        .danger { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚡ TATA Nexon EV Troubleshooting Handbook</h1>
+        <p>Electric Vehicle Error Code Reference & Resolution Guide</p>
+    </div>
+    
+    <div class="content">
+        <a href="electric-vehicles.html" class="back-btn">← Back to Electric Vehicles</a>
+        
+        <h2>Vehicle Information</h2>
+        <p><strong>Model:</strong> TATA Nexon EV</p>
+        <p><strong>Battery:</strong> 30.2 kWh Lithium-ion</p>
+        <p><strong>Range:</strong> 312 km (ARAI certified)</p>
+        <p><strong>Technology:</strong> Ziptron EV Powertrain</p>
+        
+        <div class="danger">
+            <strong>⚠️ HIGH VOLTAGE WARNING:</strong> Never touch orange-colored cables or components. Always disconnect high voltage system before any maintenance. Only certified EV technicians should work on high voltage systems.
+        </div>
+        
+        <h2>EV-Specific Error Codes & Solutions</h2>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">EV001</span></h3>
+            <h4>Battery Not Charging</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Charging indicator not lighting up</li>
+                <li>No charging current detected</li>
+                <li>Charging port LED not active</li>
+                <li>Dashboard shows "Charging Error"</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Verify Cable Connection:</strong> Ensure charging cable is firmly connected to both vehicle and charging station. Listen for locking click sound</li>
+                <li><strong>Check Charging Port:</strong> Inspect charging port for debris, water, or physical damage. Clean with dry cloth if needed</li>
+                <li><strong>Test Charging Station:</strong> Try charging another EV at same station to verify station is working properly</li>
+                <li><strong>Check Vehicle Settings:</strong> Verify charging is not scheduled for later time in vehicle settings</li>
+                <li><strong>Inspect Onboard Charger Fuse:</strong> Check 40A fuse in fuse box (located under hood). Replace if blown</li>
+                <li><strong>Reset Charging System:</strong> Disconnect cable, turn off vehicle completely, wait 2 minutes, then retry charging</li>
+                <li><strong>Check BMS Status:</strong> Use diagnostic tool to check Battery Management System for fault codes</li>
+                <li><strong>Contact Service Center:</strong> If issue persists, schedule appointment for onboard charger diagnostics</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹0 - ₹25,000 (depending on component)</p>
+            <p><strong>Time Required:</strong> 15 minutes - 3 hours</p>
+        </div>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">EV015</span></h3>
+            <h4>Reduced Power Mode / Turtle Mode</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Significant reduction in acceleration</li>
+                <li>Maximum speed limited to 40-50 km/h</li>
+                <li>Turtle icon displayed on dashboard</li>
+                <li>Power output restricted</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Check Battery Temperature:</strong> View battery temperature on dashboard (optimal: 20-35°C). If overheated (>45°C), park in shade and allow cooling for 30-60 minutes</li>
+                <li><strong>Verify State of Charge:</strong> Check battery SOC. If below 10%, charge immediately. Reduced power activates to preserve remaining range</li>
+                <li><strong>Inspect Cooling System:</strong> Ensure battery cooling system is functioning. Check coolant level in battery cooling reservoir</li>
+                <li><strong>Check for Overload:</strong> Avoid aggressive acceleration and high-speed driving in extreme temperatures</li>
+                <li><strong>Perform Battery Calibration:</strong> Charge battery to 100%, drive until 10%, then charge back to 100% without interruption</li>
+                <li><strong>Check Cell Balance:</strong> Use diagnostic tool to verify all battery cells are balanced (voltage difference <50mV)</li>
+                <li><strong>Update Software:</strong> Visit service center to update BMS and motor controller software to latest version</li>
+                <li><strong>BMS Diagnostics:</strong> If issue persists, comprehensive BMS diagnostics required at authorized service center</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹0 - ₹15,000 (if components need replacement)</p>
+            <p><strong>Time Required:</strong> 30 minutes - 4 hours</p>
+        </div>
+        
+        <div class="error-section">
+            <h3>Error Code: <span class="error-code">EV012</span></h3>
+            <h4>Battery Cell Imbalance</h4>
+            <p><strong>Symptoms:</strong></p>
+            <ul>
+                <li>Reduced driving range</li>
+                <li>Inconsistent battery percentage readings</li>
+                <li>Warning message on dashboard</li>
+                <li>Charging stops before reaching 100%</li>
+            </ul>
+            <p><strong>Resolution Steps:</strong></p>
+            <ol class="steps">
+                <li><strong>Perform Full Charge Cycle:</strong> Charge battery from current level to 100% without interruption</li>
+                <li><strong>Allow Balancing Time:</strong> After reaching 100%, keep vehicle plugged in for additional 2 hours. BMS will automatically balance cells</li>
+                <li><strong>Deep Discharge (if safe):</strong> Drive vehicle until battery reaches 5-10% SOC, then immediately charge to 100%</li>
+                <li><strong>Repeat Cycle:</strong> Perform 2-3 full charge/discharge cycles over a week</li>
+                <li><strong>Avoid Partial Charging:</strong> For next few weeks, try to charge from low SOC to high SOC rather than frequent top-ups</li>
+                <li><strong>Check Cell Voltages:</strong> Use diagnostic tool to monitor individual cell voltages (should be within 50mV of each other)</li>
+                <li><strong>BMS Recalibration:</strong> If imbalance persists, visit service center for BMS recalibration</li>
+                <li><strong>Cell Replacement:</strong> In rare cases, faulty cells may need replacement (covered under 8-year warranty)</li>
+            </ol>
+            <p><strong>Estimated Cost:</strong> ₹0 (usually resolved by balancing) - Warranty covers cell replacement</p>
+            <p><strong>Time Required:</strong> 1-2 weeks of cycling</p>
+        </div>
+        
+        <h2>Charging Best Practices</h2>
+        <ul class="steps">
+            <li>Maintain battery charge between 20-80% for daily use</li>
+            <li>Charge to 100% only before long trips</li>
+            <li>Avoid frequent DC fast charging (use AC charging for daily needs)</li>
+            <li>Don't leave battery at 0% or 100% for extended periods</li>
+            <li>Park in shade during hot weather to prevent battery overheating</li>
+            <li>Use scheduled charging during cooler night hours</li>
+        </ul>
+        
+        <h2>Battery Warranty Information</h2>
+        <p><strong>Coverage:</strong> 8 years or 1.6 lakh kilometers (whichever comes first)</p>
+        <p><strong>Warranty Covers:</strong> Battery capacity degradation below 70%, cell failures, BMS issues</p>
+        
+        <h2>Emergency Contact</h2>
+        <p><strong>TATA EV 24x7 Roadside Assistance:</strong> 1800-209-8282</p>
+        <p><strong>EV Customer Care:</strong> 1800-209-7979</p>
+        
+        <a href="electric-vehicles.html" class="back-btn">← Back to Electric Vehicles</a>
+    </div>
+</body>
+</html>

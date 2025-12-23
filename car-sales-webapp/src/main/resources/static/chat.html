@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA Motors AI Chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .chat-container {
+            width: 450px;
+            height: 700px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        .chat-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .chat-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+        .message {
+            margin-bottom: 20px;
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message-content {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+        .message.user .message-content {
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            color: white;
+            border-radius: 20px 20px 5px 20px;
+        }
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-radius: 20px 20px 20px 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .welcome-message {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .welcome-message h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .welcome-message ul {
+            list-style: none;
+            color: #666;
+            font-size: 14px;
+        }
+        .welcome-message li {
+            padding: 5px 0;
+        }
+        .welcome-message li:before {
+            content: "✓ ";
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .chat-input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+        }
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+        #messageInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        #messageInput:focus {
+            border-color: #0056b3;
+        }
+        #sendButton {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #sendButton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,86,179,0.3);
+        }
+        #sendButton:active {
+            transform: scale(0.95);
+        }
+        .typing-indicator {
+            display: inline-block;
+            padding: 15px 20px;
+            background: #f0f0f0;
+            border-radius: 20px;
+        }
+        .typing-indicator span {
+            height: 10px;
+            width: 10px;
+            background: #999;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            animation: typing 1.4s infinite;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>🚗 TATA Motors AI Assistant</h1>
+            <p>Powered by LangGraph & MCP</p>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <h3>👋 Welcome to TATA Motors!</h3>
+                <ul>
+                    <li>Vehicle specifications & features</li>
+                    <li>Pricing & special offers</li>
+                    <li>Brochures & documentation</li>
+                    <li>Contact & dealer information</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chat-input-area">
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="Ask me anything about TATA Motors..." />
+                <button id="sendButton" onclick="sendMessage()">Send ➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function addMessage(content, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typing-indicator');
+            if (typing) typing.remove();
+        }
+
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, true);
+            messageInput.value = '';
+            showTyping();
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+                hideTyping();
+                addMessage(data.response.replace(/\n/g, '<br>'), false);
+            } catch (error) {
+                hideTyping();
+                addMessage('⚠️ Connection error. Please try again.', false);
+            }
+        }
+    </script>
+</body>
+</html>
